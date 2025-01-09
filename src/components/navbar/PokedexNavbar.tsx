@@ -37,7 +37,6 @@ export default function PokedexNavbar() {
             >
                 <option value="">Type</option>
                 {types.map((type) => (
-                    // Ajout de la clé unique ici
                     <option key={type.name} value={type.name}>
                         {type.name}
                     </option>

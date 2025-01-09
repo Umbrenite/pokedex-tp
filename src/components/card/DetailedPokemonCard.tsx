@@ -1,4 +1,5 @@
 import Statistics from "@/components/stats/Statistics";
+import Link from "next/link";
 
 export default function DetailedPokemonCard(props) {
   
@@ -14,8 +15,23 @@ export default function DetailedPokemonCard(props) {
                 <img src={props.pokemonData.image} width="400px" alt={props.pokemonData.name} />
             </div>
         </div>
+        
         <Statistics pokemonData={props.pokemonData}></Statistics>
+        
+        <div>
+          {props.pokemonData.evolutions && props.pokemonData.evolutions.length > 0 ? (
+            <div>
+              <h3 className="text-xl">Evolutions:</h3>
+              <ul>
+                {props.pokemonData.evolutions.map((evolution) => (
+                  <li key={evolution.pokedexId}>{evolution.name}</li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            <p>Aucune évolution disponible.</p>
+          )}
+        </div>
       </div>
     );
-  }
-  
+}

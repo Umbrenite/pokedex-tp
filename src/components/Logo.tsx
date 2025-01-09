@@ -7,7 +7,6 @@ export default function Logo() {
       alt="Logo"
       width={25}
       height={25}
-      // style={{ position: "absolute" }}
     />
   );
 }
